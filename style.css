@@ -1,6 +1,5 @@
 :root {
   --bg: #07070b;
-  --bg-soft: #101018;
   --panel: rgba(255, 255, 255, 0.06);
   --text: #f7f7fb;
   --muted: #c9c9d6;
@@ -51,6 +50,12 @@ a {
   text-decoration: none;
 }
 
+svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
 .container {
   width: min(var(--container), calc(100% - 40px));
   margin: 0 auto;
@@ -94,6 +99,8 @@ a {
   display: flex;
   align-items: center;
   gap: 24px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .nav a {
@@ -138,12 +145,17 @@ a {
   line-height: 1.02;
 }
 
-.hero-text h1 span {
-  display: block;
-  margin-top: 12px;
+.hero-role {
+  margin: 14px 0 4px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.hero-brand {
+  margin: 0 0 8px;
   color: var(--gold);
-  font-size: clamp(1.25rem, 2vw, 2rem);
-  font-family: "Inter", sans-serif;
+  font-size: clamp(1.4rem, 2vw, 2rem);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -228,11 +240,10 @@ a {
 }
 
 .hero-visual {
-  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: flex-end;
-  padding-bottom: 10px;
+  gap: 18px;
 }
 
 .card-frame {
@@ -254,15 +265,15 @@ a {
 }
 
 .profile-badge {
-  position: absolute;
-  right: -8px;
-  bottom: -12px;
-  width: 150px;
-  height: 150px;
+  width: 126px;
+  height: 126px;
   padding: 6px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--gold), #fff1b4);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  align-self: flex-end;
+  margin-right: 8px;
+  margin-top: -6px;
 }
 
 .profile-photo {
@@ -294,12 +305,19 @@ a {
 }
 
 .section-heading h2,
-.brand-copy h2,
 .contact-box h2 {
   margin: 0;
   font-family: "Cinzel", serif;
   font-size: clamp(2rem, 3vw, 3rem);
   line-height: 1.25;
+}
+
+.section-intro {
+  max-width: 760px;
+  margin: 14px auto 0;
+  color: var(--muted);
+  line-height: 1.8;
+  text-align: center;
 }
 
 .center {
@@ -422,54 +440,67 @@ a {
   letter-spacing: 0.08em;
 }
 
-/* BRAND */
-.brand-grid {
+/* LOGOS */
+.logo-grid {
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 26px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.logo-card {
+  min-height: 110px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(245, 199, 93, 0.28);
+  color: #f3d489;
+  font-weight: 700;
+  text-align: center;
 }
 
-.brand-copy p:not(.section-label) {
-  color: var(--muted);
-  line-height: 1.85;
+/* TESTIMONIALS */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 36px;
 }
 
-.brand-box {
-  padding: 28px;
-  border-radius: 26px;
+.testimonial-card {
+  padding: 26px;
+  border-radius: var(--radius);
   background: var(--panel);
-  border: 1px solid rgba(245, 199, 93, 0.18);
+  border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
 
-.brand-box h3 {
+.testimonial-text {
   margin: 0 0 18px;
+  color: #ffffff;
+  line-height: 1.85;
+  font-size: 1rem;
+}
+
+.testimonial-author {
+  margin: 0;
   color: var(--gold);
+  font-weight: 700;
 }
 
-.trait-list {
+.recommendation-cta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.trait-list span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 42px;
-  padding: 0 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(245, 199, 93, 0.24);
-  background: rgba(245, 199, 93, 0.08);
-  color: #fff5d2;
-  font-weight: 600;
+  justify-content: center;
+  margin-top: 28px;
 }
 
 /* CONTACT */
 .contact-box {
   display: grid;
-  grid-template-columns: 1fr 0.8fr;
+  grid-template-columns: 1fr 0.9fr;
   gap: 30px;
   padding: 34px;
   border-radius: 28px;
@@ -489,10 +520,11 @@ a {
   align-content: center;
 }
 
-.contact-links a {
+.contact-link {
   display: flex;
   align-items: center;
-  min-height: 56px;
+  gap: 14px;
+  min-height: 60px;
   padding: 0 18px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.04);
@@ -502,9 +534,24 @@ a {
   transition: 0.25s ease;
 }
 
-.contact-links a:hover {
+.contact-link:hover {
   border-color: rgba(245, 199, 93, 0.32);
   color: var(--gold);
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(245, 199, 93, 0.12);
+  color: var(--gold);
+}
+
+.whatsapp-icon {
+  color: #25D366;
 }
 
 /* FOOTER */
@@ -523,29 +570,33 @@ a {
 }
 
 /* RESPONSIVE */
+@media (max-width: 1200px) {
+  .logo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 1100px) {
   .hero-grid,
   .two-col,
-  .brand-grid,
   .contact-box {
     grid-template-columns: 1fr;
   }
 
   .service-grid,
   .portfolio-grid,
+  .testimonial-grid,
   .hero-stats {
     grid-template-columns: 1fr 1fr;
   }
 
   .hero-visual {
-    padding-top: 10px;
+    align-items: center;
   }
 
   .profile-badge {
-    right: 10px;
-    bottom: -10px;
-    width: 130px;
-    height: 130px;
+    align-self: center;
+    margin-right: 0;
   }
 }
 
@@ -557,7 +608,6 @@ a {
   }
 
   .nav {
-    flex-wrap: wrap;
     gap: 14px;
   }
 
@@ -569,21 +619,12 @@ a {
     gap: 30px;
   }
 
-  .hero-text h1 span {
-    letter-spacing: 0.05em;
-  }
-
   .service-grid,
   .portfolio-grid,
-  .hero-stats {
+  .hero-stats,
+  .logo-grid,
+  .testimonial-grid {
     grid-template-columns: 1fr;
-  }
-
-  .profile-badge {
-    position: static;
-    width: 110px;
-    height: 110px;
-    margin: 18px auto 0;
   }
 
   .contact-box {
