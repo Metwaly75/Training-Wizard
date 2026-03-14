@@ -2,12 +2,10 @@
   --bg: #07070b;
   --bg-soft: #101018;
   --panel: rgba(255, 255, 255, 0.06);
-  --panel-strong: rgba(255, 255, 255, 0.08);
   --text: #f7f7fb;
   --muted: #c9c9d6;
   --gold: #f5c75d;
   --gold-strong: #dca93a;
-  --gold-soft: rgba(245, 199, 93, 0.15);
   --border: rgba(255, 255, 255, 0.12);
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
   --radius: 22px;
@@ -110,12 +108,12 @@ a {
 
 /* HERO */
 .hero {
-  padding: 70px 0 40px;
+  padding: 56px 0 24px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.95fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: 48px;
 }
@@ -136,13 +134,13 @@ a {
 .hero-text h1 {
   margin: 0;
   font-family: "Cinzel", serif;
-  font-size: clamp(2.5rem, 5vw, 4.9rem);
-  line-height: 1.05;
+  font-size: clamp(2.5rem, 5vw, 4.7rem);
+  line-height: 1.02;
 }
 
 .hero-text h1 span {
   display: block;
-  margin-top: 10px;
+  margin-top: 12px;
   color: var(--gold);
   font-size: clamp(1.25rem, 2vw, 2rem);
   font-family: "Inter", sans-serif;
@@ -231,37 +229,36 @@ a {
 
 .hero-visual {
   position: relative;
-  min-height: 760px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 10px;
 }
 
 .card-frame {
-  width: min(100%, 520px);
+  width: min(100%, 560px);
   padding: 16px;
   border-radius: 30px;
-  background:
-    linear-gradient(180deg, rgba(245, 199, 93, 0.1), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(180deg, rgba(245, 199, 93, 0.1), rgba(255, 255, 255, 0.03));
   border: 1px solid rgba(245, 199, 93, 0.18);
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.5),
-    0 0 40px rgba(245, 199, 93, 0.1);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(245, 199, 93, 0.1);
 }
 
 .wizard-card {
   width: 100%;
+  height: auto;
+  max-height: 760px;
   border-radius: 24px;
+  object-fit: contain;
   display: block;
-  object-fit: cover;
 }
 
 .profile-badge {
   position: absolute;
   right: -8px;
-  bottom: 42px;
-  width: 170px;
-  height: 170px;
+  bottom: -12px;
+  width: 150px;
+  height: 150px;
   padding: 6px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--gold), #fff1b4);
@@ -276,37 +273,9 @@ a {
   background: #fff;
 }
 
-.visual-note {
-  position: absolute;
-  left: -10px;
-  bottom: 30px;
-  max-width: 280px;
-  padding: 18px 20px;
-  border-radius: 18px;
-  background: rgba(12, 12, 18, 0.82);
-  border: 1px solid rgba(245, 199, 93, 0.22);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow);
-}
-
-.note-title {
-  display: inline-block;
-  margin-bottom: 8px;
-  color: var(--gold);
-  font-weight: 800;
-  font-size: 0.95rem;
-}
-
-.visual-note p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
-  font-size: 0.94rem;
-}
-
 /* SECTIONS */
 .section {
-  padding: 92px 0;
+  padding: 88px 0;
 }
 
 .section-dark {
@@ -437,8 +406,7 @@ a {
 }
 
 .featured {
-  background:
-    linear-gradient(180deg, rgba(245, 199, 93, 0.08), rgba(255, 255, 255, 0.04));
+  background: linear-gradient(180deg, rgba(245, 199, 93, 0.08), rgba(255, 255, 255, 0.04));
 }
 
 .pill {
@@ -505,8 +473,7 @@ a {
   gap: 30px;
   padding: 34px;
   border-radius: 28px;
-  background:
-    linear-gradient(180deg, rgba(245, 199, 93, 0.06), rgba(255, 255, 255, 0.04));
+  background: linear-gradient(180deg, rgba(245, 199, 93, 0.06), rgba(255, 255, 255, 0.04));
   border: 1px solid rgba(245, 199, 93, 0.18);
   box-shadow: var(--shadow);
 }
@@ -571,21 +538,14 @@ a {
   }
 
   .hero-visual {
-    min-height: auto;
     padding-top: 10px;
   }
 
   .profile-badge {
     right: 10px;
-    bottom: 10px;
-    width: 140px;
-    height: 140px;
-  }
-
-  .visual-note {
-    left: 10px;
-    bottom: 10px;
-    max-width: 250px;
+    bottom: -10px;
+    width: 130px;
+    height: 130px;
   }
 }
 
@@ -619,21 +579,11 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .hero-visual {
-    min-height: auto;
-  }
-
   .profile-badge {
     position: static;
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     margin: 18px auto 0;
-  }
-
-  .visual-note {
-    position: static;
-    max-width: none;
-    margin-top: 18px;
   }
 
   .contact-box {
