@@ -3,84 +3,312 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Training Wizard | Mohamed Metwaly</title>
+  <title>Mohamed Metwaly | Training Wizard</title>
+  <meta
+    name="description"
+    content="Mohamed Metwaly - Instructional Designer, Corporate L&D Specialist, and Training Wizard."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav>
-      <h1>Training Wizard</h1>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <div class="page-glow"></div>
 
-    <div class="hero-content">
-      <h2>Corporate Learning Design with clarity, creativity, and impact.</h2>
-      <p>
-        I design ILT, VILT, onboarding, and business-focused learning experiences
-        for teams and organizations.
-      </p>
-      <a class="btn" href="#portfolio">View My Work</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="brand">
+        <span class="brand-mark">✦</span>
+        <span>Training Wizard</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <section id="about" class="section">
-    <h3>About Me</h3>
-    <p>
-      I'm Mohamed Metwaly, a learning designer and trainer focused on corporate
-      L&D, instructor-led learning, facilitation materials, and performance-driven programs.
-    </p>
-  </section>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Instructional Designer • Corporate L&D • ILT / VILT</p>
 
-  <section id="services" class="section">
-    <h3>Services</h3>
-    <div class="cards">
-      <div class="card">
-        <h4>ILT Design</h4>
-        <p>Facilitator guides, learner guides, activities, timing plans, and assessments.</p>
+          <h1>
+            Mohamed Metwaly
+            <span>Training Wizard</span>
+          </h1>
+
+          <p class="hero-lead">
+            I design learning experiences that turn complexity into clarity,
+            workshops into engagement, and training into real business impact.
+          </p>
+
+          <p class="hero-subtext">
+            Specialized in corporate learning design, facilitator materials,
+            onboarding journeys, blended learning, and audience-centered training solutions.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Let’s Collaborate</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <h3>ILT</h3>
+              <p>Facilitator guides, learner workbooks, workshop flow</p>
+            </div>
+            <div class="stat-card">
+              <h3>VILT</h3>
+              <p>Virtual engagement design, breakout flow, activity adaptation</p>
+            </div>
+            <div class="stat-card">
+              <h3>L&D</h3>
+              <p>Onboarding, capability building, learning journeys</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="card-frame">
+            <img
+              src="images/card-gold.png"
+              alt="Mohamed Metwaly Training Wizard card"
+              class="wizard-card"
+            />
+          </div>
+
+          <div class="profile-badge">
+            <img
+              src="images/profile.png"
+              alt="Mohamed Metwaly profile photo"
+              class="profile-photo"
+            />
+          </div>
+
+          <div class="visual-note">
+            <span class="note-title">Brand concept</span>
+            <p>
+              A premium wizard identity that represents clarity, adaptability,
+              engagement, and transformation in learning design.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h4>VILT Design</h4>
-        <p>Virtual learning flow, engagement activities, and support materials.</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container two-col">
+        <div class="section-heading">
+          <p class="section-label">About</p>
+          <h2>Learning design with strategy, not just aesthetics.</h2>
+        </div>
+
+        <div class="section-content">
+          <p>
+            I’m Mohamed Metwaly, an instructional designer and corporate learning
+            professional focused on creating practical, engaging, and business-aligned
+            learning experiences.
+          </p>
+
+          <p>
+            My work blends structure, creativity, audience awareness, and facilitation
+            thinking to build programs that are not only well-designed, but also easy to
+            deliver and easier to remember.
+          </p>
+
+          <p>
+            The “Training Wizard” brand reflects the way I approach learning:
+            making complex topics clearer, workshops more engaging, and training more
+            meaningful for real people.
+          </p>
+        </div>
       </div>
-      <div class="card">
-        <h4>L&D Consulting</h4>
-        <p>Learning paths, onboarding programs, TNA support, and capability-building solutions.</p>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section section-dark">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="section-label">Services</p>
+          <h2>What I can build for teams and organizations</h2>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Instructor-Led Training Design</h3>
+            <p>
+              Full workshop design including facilitator guides, learner handouts,
+              activities, timing maps, and assessments.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Virtual Instructor-Led Training</h3>
+            <p>
+              VILT experiences designed for participation, interaction, and strong
+              flow across live virtual sessions.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Onboarding & Learning Journeys</h3>
+            <p>
+              Structured onboarding and multi-step development journeys that support
+              performance and retention.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Facilitation Support Assets</h3>
+            <p>
+              Slide decks, workbooks, activity sheets, reflection prompts, and
+              trainer support tools for stronger delivery.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Learning Experience Consulting</h3>
+            <p>
+              Support with content structure, audience targeting, learning flow,
+              engagement methods, and program direction.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✦</div>
+            <h3>Training Transformation</h3>
+            <p>
+              Turning dense, unclear, or traditional materials into practical and
+              engaging learning experiences.
+            </p>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="section-label">Portfolio</p>
+          <h2>Featured work direction</h2>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-card featured">
+            <span class="pill">Featured</span>
+            <h3>Leadership Development Workshop</h3>
+            <p class="portfolio-meta">ILT Design • Manager Development</p>
+            <p>
+              A practical workshop experience designed to help managers apply leadership
+              tools through reflection, guided activities, and action planning.
+            </p>
+            <ul>
+              <li>Facilitator guide</li>
+              <li>Learner workbook</li>
+              <li>Slides and activities</li>
+              <li>Evaluation sheet</li>
+            </ul>
+          </article>
+
+          <article class="portfolio-card">
+            <h3>Cybersecurity Awareness Learning Journey</h3>
+            <p class="portfolio-meta">Blended Learning • Awareness Design</p>
+            <p>
+              A learning journey that transforms awareness topics into practical,
+              scenario-based learning supported by reinforcement assets.
+            </p>
+          </article>
+
+          <article class="portfolio-card">
+            <h3>Onboarding Experience Redesign</h3>
+            <p class="portfolio-meta">Corporate L&D • New Hire Experience</p>
+            <p>
+              A structured onboarding concept focused on clarity, early confidence,
+              and smoother performance ramp-up.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND SECTION -->
+    <section class="section section-dark">
+      <div class="container brand-grid">
+        <div class="brand-copy">
+          <p class="section-label">Theme Direction</p>
+          <h2>The wizard theme, but professional.</h2>
+          <p>
+            This theme is built to feel memorable and premium, not childish.
+            The magic language represents transformation, clarity, adaptability,
+            and engagement in learning design.
+          </p>
+          <p>
+            That makes your portfolio stand out while still feeling suitable for
+            corporate L&D, consulting, and instructional design work.
+          </p>
+        </div>
+
+        <div class="brand-box">
+          <h3>Core Brand Traits</h3>
+          <div class="trait-list">
+            <span>Clarity</span>
+            <span>Transformation</span>
+            <span>Engagement</span>
+            <span>Adaptability</span>
+            <span>Structure</span>
+            <span>Memorability</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container contact-box">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2>Let’s build learning that actually lands.</h2>
+          <p>
+            Ready to collaborate on corporate training, workshop design,
+            onboarding, or learning transformation.
+          </p>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:your@email.com">your@email.com</a>
+          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+            LinkedIn Profile
+          </a>
+          <a href="https://github.com/Metwaly75" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© 2026 Mohamed Metwaly — Training Wizard</p>
+      <p>Designed for clarity, engagement, and impact.</p>
     </div>
-  </section>
-
-  <section id="portfolio" class="section">
-    <h3>Portfolio</h3>
-
-    <div class="project">
-      <h4>Leadership Development Workshop</h4>
-      <p><strong>Challenge:</strong> Managers needed practical leadership tools.</p>
-      <p><strong>Solution:</strong> Designed a structured ILT workshop with reflection and action planning.</p>
-      <p><strong>Deliverables:</strong> Slides, facilitator guide, learner workbook, and evaluation tool.</p>
-    </div>
-
-    <div class="project">
-      <h4>Cybersecurity Awareness Learning Journey</h4>
-      <p><strong>Challenge:</strong> Employees needed engaging awareness learning.</p>
-      <p><strong>Solution:</strong> Built a blended learning experience with scenarios and reinforcement assets.</p>
-      <p><strong>Deliverables:</strong> Storyboards, slides, activities, and assessments.</p>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <h3>Contact</h3>
-    <p>Email: your@email.com</p>
-    <p>LinkedIn: linkedin.com/in/yourprofile</p>
-    <p>GitHub: github.com/Metwaly75</p>
-  </section>
-
-  <footer>
-    <p>© 2026 Mohamed Metwaly | Training Wizard</p>
   </footer>
 </body>
 </html>
