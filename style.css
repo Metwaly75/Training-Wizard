@@ -215,30 +215,31 @@ svg {
 
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  margin-top: 38px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 34px;
 }
 
 .stat-card {
-  padding: 24px;
-  border-radius: 22px;
+  min-height: 220px;
+  padding: 28px;
+  border-radius: 28px;
   background: var(--panel);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
 
 .stat-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   color: var(--gold);
-  font-size: 1.5rem;
-  line-height: 1.25;
+  font-size: 2rem;
+  line-height: 1.2;
 }
 
 .stat-card p {
   margin: 0;
   color: var(--muted);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   line-height: 1.8;
 }
 
@@ -342,72 +343,94 @@ svg {
   font-size: 1.2rem;
 }
 
-.subsection-label {
-  margin: 0;
-  color: var(--gold);
-  font-size: 2rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.subsection-heading {
-  margin-bottom: 28px;
-}
-
-.services-block-second {
-  margin-top: 72px;
-}
-
-/* ACCORDION SERVICES */
-.accordion-list {
-  display: grid;
-  gap: 18px;
-  margin-top: 24px;
-}
-
-.accordion-item {
-  border-radius: 22px;
-  background: var(--panel);
-  border: 1px solid var(--border);
+/* SERVICE GROUPS */
+.service-group {
+  margin-top: 34px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(245, 199, 93, 0.18);
   box-shadow: var(--shadow);
   overflow: hidden;
 }
 
-.accordion-item summary {
+.service-group summary {
   list-style: none;
   cursor: pointer;
-  padding: 24px 72px 24px 26px;
   position: relative;
-  font-size: 1.45rem;
+  padding: 28px 84px 28px 30px;
+  color: var(--gold);
+  font-size: 2rem;
   font-weight: 800;
-  color: #ffffff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.accordion-item summary::-webkit-details-marker {
+.service-group summary::-webkit-details-marker {
   display: none;
 }
 
-.accordion-item summary::after {
+.service-group summary::after {
   content: "+";
   position: absolute;
-  right: 26px;
+  right: 28px;
   top: 50%;
   transform: translateY(-50%);
+  font-size: 2.2rem;
   color: var(--gold);
-  font-size: 2rem;
-  font-weight: 700;
 }
 
-.accordion-item[open] summary::after {
+.service-group[open] summary::after {
   content: "–";
 }
 
-.accordion-content {
-  padding: 0 26px 24px;
+.service-group .service-grid {
+  padding: 0 26px 26px;
+}
+
+/* SERVICES CARDS */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  padding: 28px;
+  border-radius: 24px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 199, 93, 0.28);
+}
+
+.service-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  color: #111;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--gold), var(--gold-strong));
+}
+
+.service-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.service-card p {
+  margin: 0;
   color: var(--muted);
-  font-size: 1.15rem;
-  line-height: 1.9;
+  line-height: 1.85;
+  font-size: 1.12rem;
 }
 
 /* PORTFOLIO */
@@ -616,6 +639,7 @@ svg {
   }
 
   .hero-stats,
+  .service-grid,
   .portfolio-grid,
   .testimonial-grid {
     grid-template-columns: 1fr 1fr;
@@ -668,6 +692,7 @@ svg {
   }
 
   .hero-stats,
+  .service-grid,
   .portfolio-grid,
   .logo-grid,
   .testimonial-grid {
@@ -678,17 +703,9 @@ svg {
     font-size: 1.02rem;
   }
 
-  .subsection-label {
-    font-size: 1.35rem;
-  }
-
-  .accordion-item summary {
-    font-size: 1.12rem;
-    padding-right: 60px;
-  }
-
-  .accordion-content {
-    font-size: 1.02rem;
+  .service-group summary {
+    font-size: 1.25rem;
+    padding-right: 64px;
   }
 
   .contact-box {
