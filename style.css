@@ -244,10 +244,10 @@ svg {
 }
 
 .hero-visual {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 22px;
+  justify-content: center;
+  padding-top: 72px;
 }
 
 .card-frame {
@@ -269,15 +269,16 @@ svg {
 }
 
 .profile-badge {
-  width: 128px;
-  height: 128px;
+  position: absolute;
+  top: 0;
+  right: 22px;
+  width: 140px;
+  height: 140px;
   padding: 6px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--gold), #fff1b4);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-  align-self: flex-end;
-  margin-right: 14px;
-  margin-top: -8px;
+  z-index: 2;
 }
 
 .profile-photo {
@@ -651,12 +652,12 @@ svg {
   }
 
   .hero-visual {
-    align-items: center;
+    justify-content: center;
   }
 
   .profile-badge {
-    align-self: center;
-    margin-right: 0;
+    right: 50%;
+    transform: translateX(50%);
   }
 
   .nav a {
@@ -702,6 +703,16 @@ svg {
   .logo-grid,
   .testimonial-grid {
     grid-template-columns: 1fr;
+  }
+
+  .profile-badge {
+    width: 108px;
+    height: 108px;
+    top: 10px;
+  }
+
+  .hero-visual {
+    padding-top: 66px;
   }
 
   .section-label {
