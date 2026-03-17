@@ -17,7 +17,14 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="scroll-progress"></div>
   <div class="page-glow"></div>
+
+  <div class="ambient-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
 
   <header class="site-header">
     <div class="container nav-wrap">
@@ -40,7 +47,7 @@
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-text">
+        <div class="hero-text reveal parallax-slow">
           <p class="eyebrow">Learning Experience Designer • Trainer • Corporate L&amp;D • ILT / VILT</p>
 
           <h1>Mohamed Metwaly</h1>
@@ -63,8 +70,8 @@
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="profile-badge">
+        <div class="hero-visual reveal delay-1 parallax-fast">
+          <div class="profile-badge floating-badge">
             <img
               src="images/profile.png"
               alt="Mohamed Metwaly profile photo"
@@ -72,7 +79,7 @@
             />
           </div>
 
-          <div class="card-frame">
+          <div class="card-frame glow-card">
             <img
               src="images/card-gold.png"
               alt="Mohamed Metwaly Training Wizard card"
@@ -83,7 +90,7 @@
       </div>
 
       <div class="container hero-stats">
-        <div class="stat-card">
+        <div class="stat-card reveal delay-1">
           <h3>Learning Experience Design</h3>
           <p>
             ILT, VILT, onboarding, learning journeys, facilitation materials,
@@ -91,7 +98,7 @@
           </p>
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card reveal delay-2">
           <h3>Facilitation &amp; Training</h3>
           <p>
             Facilitating ILT &amp; VILT sessions, simulations, game-based learning,
@@ -103,12 +110,12 @@
 
     <section id="about" class="section">
       <div class="container two-col">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="section-label">About</p>
           <h2>Learning design with strategy, not just aesthetics.</h2>
         </div>
 
-        <div class="section-content">
+        <div class="section-content reveal delay-1">
           <p>
             I’m Mohamed Metwaly, a learning experience designer and trainer focused on
             creating practical, engaging, and business-aligned learning solutions.
@@ -131,7 +138,7 @@
 
     <section id="services" class="section section-dark">
       <div class="container">
-        <div class="section-heading center">
+        <div class="section-heading center reveal">
           <p class="section-label">Services</p>
           <h2 class="services-main-title">
             What I can build &amp; facilitate
@@ -140,11 +147,11 @@
           </h2>
         </div>
 
-        <details class="service-group">
+        <details class="service-group reveal delay-1">
           <summary>Learning Experience Design</summary>
 
           <div class="service-grid">
-            <article class="service-card">
+            <article class="service-card reveal-card">
               <div class="service-icon">✦</div>
               <h3>Instructor-Led Training Design</h3>
               <p>
@@ -153,7 +160,7 @@
               </p>
             </article>
 
-            <article class="service-card">
+            <article class="service-card reveal-card">
               <div class="service-icon">✦</div>
               <h3>Virtual Instructor-Led Training</h3>
               <p>
@@ -162,7 +169,7 @@
               </p>
             </article>
 
-            <article class="service-card">
+            <article class="service-card reveal-card">
               <div class="service-icon">✦</div>
               <h3>Onboarding &amp; Learning Journeys</h3>
               <p>
@@ -171,7 +178,7 @@
               </p>
             </article>
 
-            <article class="service-card">
+            <article class="service-card reveal-card">
               <div class="service-icon">✦</div>
               <h3>Facilitation Support Assets</h3>
               <p>
@@ -180,7 +187,7 @@
               </p>
             </article>
 
-            <article class="service-card">
+            <article class="service-card reveal-card">
               <div class="service-icon">✦</div>
               <h3>Learning Experience Consulting</h3>
               <p>
@@ -189,7 +196,7 @@
               </p>
             </article>
 
-            <article class="service-card">
+            <article class="service-card reveal-card">
               <div class="service-icon">✦</div>
               <h3>Training Transformation</h3>
               <p>
@@ -200,11 +207,11 @@
           </div>
         </details>
 
-        <details class="service-group">
+        <details class="service-group reveal delay-2">
           <summary>Facilitation &amp; Training</summary>
 
           <div class="service-grid">
-            <article class="service-card">
+            <article class="service-card reveal-card">
               <div class="service-icon">✦</div>
               <h3>ILT Facilitation</h3>
               <p>
@@ -213,7 +220,7 @@
               </p>
             </article>
 
-            <article class="service-card">
+            <article class="service-card reveal-card">
               <div class="service-icon">✦</div>
               <h3>VILT Facilitation</h3>
               <p>
@@ -222,7 +229,7 @@
               </p>
             </article>
 
-            <article class="service-card">
+            <article class="service-card reveal-card">
               <div class="service-icon">✦</div>
               <h3>Simulations</h3>
               <p>
@@ -231,7 +238,7 @@
               </p>
             </article>
 
-            <article class="service-card">
+            <article class="service-card reveal-card">
               <div class="service-icon">✦</div>
               <h3>Game-Based Learning Solutions</h3>
               <p>
@@ -240,7 +247,7 @@
               </p>
             </article>
 
-            <article class="service-card">
+            <article class="service-card reveal-card">
               <div class="service-icon">✦</div>
               <h3>Gamified Solutions</h3>
               <p>
@@ -255,13 +262,13 @@
 
     <section id="portfolio" class="section">
       <div class="container">
-        <div class="section-heading center">
+        <div class="section-heading center reveal">
           <p class="section-label">Portfolio</p>
           <h2>Featured work direction</h2>
         </div>
 
         <div class="portfolio-grid">
-          <article class="portfolio-card featured">
+          <article class="portfolio-card featured reveal">
             <span class="pill">Featured</span>
             <h3>Leadership Development Workshop</h3>
             <p class="portfolio-meta">ILT Design • Manager Development</p>
@@ -277,7 +284,7 @@
             </ul>
           </article>
 
-          <article class="portfolio-card">
+          <article class="portfolio-card reveal delay-1">
             <h3>Cybersecurity Awareness Learning Journey</h3>
             <p class="portfolio-meta">Blended Learning • Awareness Design</p>
             <p>
@@ -286,7 +293,7 @@
             </p>
           </article>
 
-          <article class="portfolio-card">
+          <article class="portfolio-card reveal delay-2">
             <h3>Onboarding Experience Redesign</h3>
             <p class="portfolio-meta">Corporate L&amp;D • New Hire Experience</p>
             <p>
@@ -300,7 +307,7 @@
 
     <section id="clients" class="section section-dark">
       <div class="container">
-        <div class="section-heading center">
+        <div class="section-heading center reveal">
           <p class="section-label">Worked With</p>
           <h2>People and companies I’ve supported</h2>
           <p class="section-intro">
@@ -309,19 +316,19 @@
         </div>
 
         <div class="logo-grid">
-          <div class="logo-card">Logo 1</div>
-          <div class="logo-card">Logo 2</div>
-          <div class="logo-card">Logo 3</div>
-          <div class="logo-card">Logo 4</div>
-          <div class="logo-card">Logo 5</div>
-          <div class="logo-card">Logo 6</div>
+          <div class="logo-card reveal">Logo 1</div>
+          <div class="logo-card reveal delay-1">Logo 2</div>
+          <div class="logo-card reveal delay-2">Logo 3</div>
+          <div class="logo-card reveal">Logo 4</div>
+          <div class="logo-card reveal delay-1">Logo 5</div>
+          <div class="logo-card reveal delay-2">Logo 6</div>
         </div>
       </div>
     </section>
 
     <section id="testimonials" class="section">
       <div class="container">
-        <div class="section-heading center">
+        <div class="section-heading center reveal">
           <p class="section-label">Testimonials</p>
           <h2>Recommendations &amp; feedback</h2>
           <p class="section-intro">
@@ -330,21 +337,21 @@
         </div>
 
         <div class="testimonial-grid">
-          <article class="testimonial-card">
+          <article class="testimonial-card reveal">
             <p class="testimonial-text">
               “Add a recommendation or testimonial here from a manager, client, or learner.”
             </p>
             <p class="testimonial-author">Name — Role / Company</p>
           </article>
 
-          <article class="testimonial-card">
+          <article class="testimonial-card reveal delay-1">
             <p class="testimonial-text">
               “Use this section to highlight feedback on facilitation, clarity, engagement, or design quality.”
             </p>
             <p class="testimonial-author">Name — Role / Company</p>
           </article>
 
-          <article class="testimonial-card">
+          <article class="testimonial-card reveal delay-2">
             <p class="testimonial-text">
               “You can also paste short LinkedIn recommendation excerpts here later.”
             </p>
@@ -352,7 +359,7 @@
           </article>
         </div>
 
-        <div class="recommendation-cta">
+        <div class="recommendation-cta reveal">
           <a
             href="https://www.linkedin.com/in/mohamedmahmoud2000/"
             target="_blank"
@@ -366,7 +373,7 @@
     </section>
 
     <section id="contact" class="section section-dark">
-      <div class="container contact-box">
+      <div class="container contact-box reveal">
         <div>
           <p class="section-label">Contact</p>
           <h2>Let’s build learning that actually lands.</h2>
@@ -433,5 +440,40 @@
       <p>Designed for clarity, engagement, and impact.</p>
     </div>
   </footer>
+
+  <script>
+    const progressBar = document.querySelector(".scroll-progress");
+    const revealItems = document.querySelectorAll(".reveal, .reveal-card");
+    const parallaxSlow = document.querySelectorAll(".parallax-slow");
+    const parallaxFast = document.querySelectorAll(".parallax-fast");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    }, { threshold: 0.14 });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    function updateScrollEffects() {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = progress + "%";
+
+      parallaxSlow.forEach((item) => {
+        item.style.transform = `translateY(${scrollTop * 0.08}px)`;
+      });
+
+      parallaxFast.forEach((item) => {
+        item.style.transform = `translateY(${scrollTop * -0.06}px)`;
+      });
+    }
+
+    window.addEventListener("scroll", updateScrollEffects, { passive: true });
+    window.addEventListener("load", updateScrollEffects);
+  </script>
 </body>
 </html>
