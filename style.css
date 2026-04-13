@@ -496,7 +496,7 @@ svg {
 }
 
 .service-group .service-grid,
-.portfolio-group .portfolio-hover-grid {
+.portfolio-group .flip-grid {
   padding: 0 22px 22px;
 }
 
@@ -546,56 +546,79 @@ svg {
   font-size: 1rem;
 }
 
-.portfolio-hover-grid {
+.flip-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 
-.portfolio-hover-card {
+.flip-grid-five {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.flip-card {
+  perspective: 1200px;
+  min-height: 320px;
+}
+
+.flip-card-inner {
   position: relative;
-  min-height: 300px;
+  width: 100%;
+  height: 320px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus .flip-card-inner,
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
   border-radius: 24px;
   overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border: 1px solid rgba(245, 199, 93, 0.18);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.03));
   box-shadow: var(--shadow);
 }
 
-.portfolio-hover-image {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(180deg, rgba(7, 7, 11, 0.18), rgba(7, 7, 11, 0.86)),
-    var(--card-image);
+.flip-card-front {
+  background-image: var(--front-image);
   background-size: cover;
   background-position: center;
-  transform: scale(1);
-  opacity: 0.28;
-  transition: transform 0.45s ease, opacity 0.45s ease;
+  display: flex;
+  align-items: flex-end;
 }
 
-.portfolio-hover-content {
+.flip-front-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 7, 11, 0.12), rgba(7, 7, 11, 0.86));
+}
+
+.flip-front-content {
   position: relative;
   z-index: 1;
-  height: 100%;
+  padding: 22px;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background:
+    linear-gradient(180deg, rgba(245, 199, 93, 0.1), rgba(255, 255, 255, 0.04)),
+    #111119;
   padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  transition: transform 0.35s ease;
 }
 
-.portfolio-hover-card:hover .portfolio-hover-image {
-  transform: scale(1.08);
-  opacity: 0.92;
-}
-
-.portfolio-hover-card:hover .portfolio-hover-content {
-  transform: translateY(-6px);
-}
-
-.portfolio-tag {
+.flip-tag {
   display: inline-flex;
   align-self: flex-start;
   margin-bottom: 12px;
@@ -610,18 +633,19 @@ svg {
   text-transform: uppercase;
 }
 
-.portfolio-hover-content h3 {
-  margin: 0 0 10px;
-  font-size: 1.32rem;
+.flip-front-content h3,
+.flip-card-back h3 {
+  margin: 0;
+  font-size: 1.28rem;
   line-height: 1.3;
+  color: #ffffff;
 }
 
-.portfolio-hover-content p {
-  margin: 0;
-  color: #f3f3f7;
+.flip-card-back p {
+  margin: 10px 0 0;
+  color: #f2f2f6;
   line-height: 1.8;
   font-size: 0.98rem;
-  max-width: 95%;
 }
 
 .logo-grid {
@@ -851,7 +875,8 @@ svg {
 
   .hero-stats,
   .service-grid,
-  .portfolio-hover-grid {
+  .flip-grid,
+  .flip-grid-five {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -908,7 +933,8 @@ svg {
 
   .hero-stats,
   .service-grid,
-  .portfolio-hover-grid,
+  .flip-grid,
+  .flip-grid-five,
   .logo-grid-15 {
     grid-template-columns: 1fr;
   }
@@ -944,5 +970,11 @@ svg {
   .recommendation-head {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .flip-card,
+  .flip-card-inner {
+    min-height: 300px;
+    height: 300px;
   }
 }
