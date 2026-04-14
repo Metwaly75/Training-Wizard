@@ -556,6 +556,10 @@ svg {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.design-grid .flip-card:first-child {
+  grid-column: span 2;
+}
+
 .flip-card {
   perspective: 1200px;
   min-height: 320px;
@@ -598,7 +602,7 @@ svg {
 .flip-front-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7, 7, 11, 0.12), rgba(7, 7, 11, 0.86));
+  background: linear-gradient(180deg, rgba(7, 7, 11, 0.08), rgba(7, 7, 11, 0.88));
 }
 
 .flip-front-content {
@@ -880,6 +884,10 @@ svg {
     grid-template-columns: 1fr 1fr;
   }
 
+  .design-grid .flip-card:first-child {
+    grid-column: span 1;
+  }
+
   .hero-visual {
     justify-content: center;
   }
@@ -937,6 +945,10 @@ svg {
   .flip-grid-five,
   .logo-grid-15 {
     grid-template-columns: 1fr;
+  }
+
+  .design-grid .flip-card:first-child {
+    grid-column: span 1;
   }
 
   .profile-badge {
