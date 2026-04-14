@@ -548,16 +548,19 @@ svg {
 
 .flip-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 
-.flip-grid-five {
+.design-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.facilitation-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.design-grid .flip-card:first-child {
-  grid-column: span 2;
+.design-grid .wide-card {
+  grid-column: 1 / -1;
 }
 
 .flip-card {
@@ -571,6 +574,14 @@ svg {
   height: 320px;
   transform-style: preserve-3d;
   transition: transform 0.7s ease;
+}
+
+.design-grid .wide-card .flip-card-inner {
+  height: 410px;
+}
+
+.design-grid .flip-card:not(.wide-card) .flip-card-inner {
+  height: 340px;
 }
 
 .flip-card:hover .flip-card-inner,
@@ -597,6 +608,18 @@ svg {
   background-position: center;
   display: flex;
   align-items: flex-end;
+  background-color: #0b0c13;
+}
+
+.design-card .flip-card-front {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.design-card.wide-card .flip-card-front {
+  background-size: cover;
+  background-position: center center;
 }
 
 .flip-front-overlay {
@@ -605,10 +628,20 @@ svg {
   background: linear-gradient(180deg, rgba(7, 7, 11, 0.08), rgba(7, 7, 11, 0.88));
 }
 
+.design-card .flip-front-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(7, 7, 11, 0.04) 0%,
+    rgba(7, 7, 11, 0.28) 50%,
+    rgba(7, 7, 11, 0.86) 100%
+  );
+}
+
 .flip-front-content {
   position: relative;
   z-index: 1;
   padding: 22px;
+  width: 100%;
 }
 
 .flip-card-back {
@@ -877,19 +910,22 @@ svg {
     grid-template-columns: 1fr;
   }
 
-  .hero-stats,
   .service-grid,
-  .flip-grid,
-  .flip-grid-five {
+  .facilitation-grid,
+  .design-grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .design-grid .flip-card:first-child {
-    grid-column: span 1;
+  .hero-stats {
+    grid-template-columns: 1fr;
   }
 
-  .hero-visual {
-    justify-content: center;
+  .design-grid .wide-card {
+    grid-column: 1 / -1;
+  }
+
+  .design-grid .wide-card .flip-card-inner {
+    height: 380px;
   }
 
   .profile-badge {
@@ -941,14 +977,20 @@ svg {
 
   .hero-stats,
   .service-grid,
-  .flip-grid,
-  .flip-grid-five,
+  .facilitation-grid,
+  .design-grid,
   .logo-grid-15 {
     grid-template-columns: 1fr;
   }
 
-  .design-grid .flip-card:first-child {
+  .design-grid .wide-card {
     grid-column: span 1;
+  }
+
+  .design-grid .wide-card .flip-card-inner,
+  .design-grid .flip-card .flip-card-inner,
+  .facilitation-grid .flip-card .flip-card-inner {
+    height: 300px;
   }
 
   .profile-badge {
@@ -982,11 +1024,5 @@ svg {
   .recommendation-head {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .flip-card,
-  .flip-card-inner {
-    min-height: 300px;
-    height: 300px;
   }
 }
