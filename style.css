@@ -909,3 +909,19 @@ a {
     min-height: auto;
   }
 }
+.contact-link {
+  gap: 14px;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(245, 199, 93, 0.14);
+  color: var(--gold);
+  font-weight: 900;
+  font-size: 18px;
+}
