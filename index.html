@@ -43,6 +43,7 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-text reveal">
@@ -61,7 +62,7 @@
           </p>
 
           <div class="hero-actions">
-            <a href="#portfolio" class="btn btn-primary">View My Work</a>
+            <a href="#portfolio" class="btn btn-primary">View My Magic</a>
             <a href="#contact" class="btn btn-secondary">Let’s Collaborate</a>
           </div>
         </div>
@@ -76,11 +77,16 @@
           </div>
 
           <div class="card-frame">
-            <img
-              src="images/card-gold.png"
-              alt="Training Wizard card"
-              class="wizard-card"
+            <video
+              class="wizard-card wizard-card-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              poster="images/card-gold.png"
             >
+              <source src="images/card-gold.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
@@ -104,29 +110,40 @@
       </div>
     </section>
 
-    <section id="about" class="section">
-      <div class="container two-col">
-        <div class="section-heading reveal">
-          <p class="section-label">About</p>
-          <h2>Learning design with strategy, not just aesthetics.</h2>
-        </div>
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-left reveal">
+            <p class="section-label">About</p>
+            <h2 class="about-title">
+              Learning design with strategy, not just aesthetics.
+            </h2>
+          </div>
 
-        <div class="section-content reveal">
-          <p>
-            Mohamed Metwaly is a learning experience designer and trainer focused on creating practical, engaging, and business-aligned learning solutions.
-          </p>
+          <div class="about-right reveal">
+            <p>
+              Mohamed Metwaly is a learning experience designer and trainer focused on
+              creating practical, engaging, and business-aligned learning solutions.
+            </p>
 
-          <p>
-            His work blends structure, creativity, audience awareness, and facilitation thinking to build programs that are not only well-designed, but also easy to deliver and easier to remember.
-          </p>
+            <p>
+              His work blends structure, creativity, audience awareness, and facilitation
+              thinking to build programs that are not only well-designed, but also easy to
+              deliver and easier to remember.
+            </p>
 
-          <p>
-            The “Training Wizard” brand reflects his approach to learning: making complex topics clearer, workshops more engaging, and training more meaningful for real people.
-          </p>
+            <p>
+              The “Training Wizard” brand reflects his approach to learning: making
+              complex topics clearer, workshops more engaging, and training more
+              meaningful for real people.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section id="services" class="section section-dark">
       <div class="container">
         <div class="section-heading center reveal">
@@ -232,6 +249,7 @@
       </div>
     </section>
 
+    <!-- PORTFOLIO -->
     <section id="portfolio" class="section">
       <div class="container">
         <div class="section-heading center reveal">
@@ -245,11 +263,7 @@
           <div class="flip-grid design-grid">
             <article class="flip-card design-card wide-card" tabindex="0">
               <div class="flip-card-inner">
-                <div class="flip-card-front video-front">
-                  <video class="card-video" autoplay muted loop playsinline poster="images/portfolio/design-1.png">
-                    <source src="images/portfolio/design-1.mp4" type="video/mp4">
-                  </video>
-
+                <div class="flip-card-front" style="--front-image: url('images/portfolio/design-1.png');">
                   <div class="flip-front-overlay"></div>
 
                   <div class="flip-front-content">
@@ -487,35 +501,37 @@
       </div>
     </section>
 
-    <section id="clients" class="section section-dark">
+    <!-- CLIENTS -->
+    <section id="clients" class="section section-dark clients-section">
       <div class="container">
-        <div class="section-heading center reveal">
+        <div class="section-heading center reveal clients-header">
           <p class="section-label">Worked With</p>
-          <h2>Organizations touched by Learning Magic</h2>
+          <h2 class="clients-title">Organizations touched by Learning Magic</h2>
         </div>
 
-        <div class="logo-grid logo-grid-15">
-          <div class="logo-card"><img src="images/clients/company-1.png" alt="Company 1 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-2.png" alt="Company 2 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-3.png" alt="Company 3 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-4.png" alt="Company 4 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-5.png" alt="Company 5 logo" class="client-logo"></div>
+        <div class="clients-grid">
+          <div class="client-card"><div class="client-logo-stage"><img src="images/clients/company-1.png" alt="ESLSCA" class="client-logo logo-lg"></div></div>
+          <div class="client-card"><div class="client-logo-stage soft-cream"><img src="images/clients/company-2.png" alt="German Cooperation and GIZ" class="client-logo logo-wide"></div></div>
+          <div class="client-card"><div class="client-logo-stage soft-cream"><img src="images/clients/company-3.png" alt="Swiss Agency for Development and Cooperation" class="client-logo logo-wide"></div></div>
+          <div class="client-card"><div class="client-logo-stage"><img src="images/clients/company-4.png" alt="UNICEF" class="client-logo logo-lg"></div></div>
+          <div class="client-card"><div class="client-logo-stage"><img src="images/clients/company-5.png" alt="MindShift" class="client-logo logo-lg"></div></div>
 
-          <div class="logo-card"><img src="images/clients/company-6.jpg" alt="Company 6 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-7.png" alt="Company 7 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-8.webp" alt="Company 8 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-9.png" alt="Company 9 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-10.png" alt="Company 10 logo" class="client-logo"></div>
+          <div class="client-card"><div class="client-logo-stage"><img src="images/clients/company-6.jpg" alt="Terre des hommes" class="client-logo logo-wide"></div></div>
+          <div class="client-card"><div class="client-logo-stage"><img src="images/clients/company-7.png" alt="Career180" class="client-logo logo-lg"></div></div>
+          <div class="client-card"><div class="client-logo-stage"><img src="images/clients/company-8.webp" alt="Freelance Yard" class="client-logo logo-wide"></div></div>
+          <div class="client-card"><div class="client-logo-stage"><img src="images/clients/company-9.png" alt="Ministry of Communications and Information Technology" class="client-logo logo-wide"></div></div>
+          <div class="client-card"><div class="client-logo-stage"><img src="images/clients/company-10.png" alt="Ministry of Health" class="client-logo logo-lg"></div></div>
 
-          <div class="logo-card"><img src="images/clients/company-11.png" alt="Company 11 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-12.png" alt="Company 12 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-13.png" alt="Company 13 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-14.png" alt="Company 14 logo" class="client-logo"></div>
-          <div class="logo-card"><img src="images/clients/company-15.png" alt="Company 15 logo" class="client-logo"></div>
+          <div class="client-card"><div class="client-logo-stage soft-cream"><img src="images/clients/company-11.png" alt="Ministry of Education and Technical Education" class="client-logo logo-lg"></div></div>
+          <div class="client-card"><div class="client-logo-stage"><img src="images/clients/company-12.png" alt="Digital Egypt Pioneers Initiative" class="client-logo logo-lg"></div></div>
+          <div class="client-card"><div class="client-logo-stage"><img src="images/clients/company-13.png" alt="Tanafus" class="client-logo logo-lg logo-light"></div></div>
+          <div class="client-card"><div class="client-logo-stage soft-cream"><img src="images/clients/company-14.png" alt="MCS" class="client-logo logo-wide"></div></div>
+          <div class="client-card"><div class="client-logo-stage"><img src="images/clients/company-15.png" alt="Xpand CS" class="client-logo logo-wide logo-light"></div></div>
         </div>
       </div>
     </section>
 
+    <!-- RECOMMENDATIONS -->
     <section id="testimonials" class="section">
       <div class="container">
         <div class="section-heading center reveal">
@@ -587,6 +603,7 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="section section-dark">
       <div class="container contact-box">
         <div>
