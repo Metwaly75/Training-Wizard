@@ -248,6 +248,16 @@ svg {
   object-fit: contain;
 }
 
+.wizard-card-video {
+  width: 100%;
+  height: auto;
+  max-height: 680px;
+  border-radius: 20px;
+  object-fit: contain;
+  display: block;
+  background: #050507;
+}
+
 .profile-badge {
   position: absolute;
   top: 0;
@@ -298,6 +308,61 @@ svg {
   line-height: 1.8;
 }
 
+/* ABOUT */
+
+.about-section {
+  padding: 110px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 72px;
+  align-items: stretch;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.about-left .section-label {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.about-title {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  font-size: clamp(3.2rem, 5vw, 5.4rem);
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+  color: #f5f1ea;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-right p {
+  margin: 0 0 26px;
+  font-size: 1.18rem;
+  line-height: 1.9;
+  color: rgba(245, 245, 245, 0.94);
+}
+
+.about-right p:last-child {
+  margin-bottom: 0;
+}
+
 /* SECTIONS */
 
 .section {
@@ -312,7 +377,7 @@ svg {
 
 .section-heading {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto 40px;
 }
 
@@ -344,29 +409,23 @@ svg {
   text-align: center;
 }
 
-.services-main-title,
-.portfolio-main-title {
-  max-width: 980px;
+.services-main-title {
+  max-width: 1320px;
   margin: 0 auto;
   text-align: center;
+  font-size: clamp(2rem, 3.2vw, 3.4rem);
+  white-space: nowrap;
 }
 
 .services-main-title span {
   display: block;
+  white-space: normal;
 }
 
-.two-col {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.section-content p {
-  margin: 0 0 18px;
-  color: var(--muted);
-  line-height: 1.9;
-  font-size: 1.02rem;
+.portfolio-main-title {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* DETAILS */
@@ -420,7 +479,7 @@ svg {
   padding: 0 22px 22px;
 }
 
-/* SERVICES */
+/* SERVICES CARDS */
 
 .service-grid {
   display: grid;
@@ -543,20 +602,6 @@ svg {
   background-size: cover;
 }
 
-.video-front {
-  position: relative;
-  background-image: none !important;
-  background: #0b0c13;
-}
-
-.card-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .flip-front-overlay {
   position: absolute;
   inset: 0;
@@ -632,39 +677,115 @@ svg {
   color: var(--gold);
 }
 
-/* CLIENTS */
+/* CLIENTS / LOGOS SECTION */
 
-.logo-grid {
+.clients-section {
+  padding: 110px 0;
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.clients-header .section-label {
+  margin-bottom: 14px;
+}
+
+.clients-title {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  font-size: clamp(2.6rem, 4.2vw, 4.4rem);
+  line-height: 1.08;
+  color: #f5f1ea;
+  text-align: center;
+}
+
+.clients-grid {
   display: grid;
-  gap: 18px;
-  margin-top: 34px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px;
 }
 
-.logo-grid-15 {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.logo-card {
-  min-height: 126px;
+.client-card {
+  position: relative;
+  min-height: 190px;
+  border-radius: 28px;
+  padding: 18px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px;
-  border-radius: 20px;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.84));
-  border: 1px solid rgba(245,199,93,0.28);
-  box-shadow: 0 16px 34px rgba(0,0,0,0.25);
+    radial-gradient(circle at top left, rgba(245, 199, 93, 0.16), transparent 45%),
+    linear-gradient(135deg, rgba(24, 23, 28, 0.98), rgba(9, 10, 18, 0.98));
+  border: 1px solid rgba(245, 199, 93, 0.24);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.03),
+    0 16px 34px rgba(0,0,0,0.28);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 199, 93, 0.42);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.04),
+    0 18px 42px rgba(0,0,0,0.34);
+}
+
+.client-logo-stage {
+  width: 100%;
+  height: 100%;
+  min-height: 150px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background:
+    linear-gradient(180deg, rgba(245,199,93,0.08), rgba(255,255,255,0.035)),
+    rgba(255,255,255,0.025);
+  border: 1px solid rgba(245, 199, 93, 0.12);
+}
+
+.client-logo-stage.soft-cream {
+  background:
+    linear-gradient(180deg, rgba(245, 236, 212, 0.18), rgba(245, 199, 93, 0.06)),
+    rgba(255,255,255,0.05);
+  border: 1px solid rgba(245, 199, 93, 0.18);
 }
 
 .client-logo {
+  max-width: 88%;
+  max-height: 96px;
   width: auto;
   height: auto;
-  max-width: 92%;
-  max-height: 84px;
   object-fit: contain;
-  filter: none;
-  opacity: 1;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.18));
+}
+
+.client-card:hover .client-logo {
+  transform: scale(1.04);
+}
+
+.client-logo.logo-lg {
+  max-width: 94%;
+  max-height: 118px;
+}
+
+.client-logo.logo-wide {
+  max-width: 96%;
+  max-height: 94px;
+}
+
+.client-logo.logo-light {
+  filter:
+    brightness(1.14)
+    contrast(1.16)
+    drop-shadow(0 6px 16px rgba(0,0,0,0.22));
 }
 
 /* RECOMMENDATIONS */
@@ -815,12 +936,33 @@ svg {
 
 /* RESPONSIVE */
 
+@media (max-width: 1300px) {
+  .services-main-title {
+    font-size: clamp(1.9rem, 3vw, 3rem);
+  }
+}
+
 @media (max-width: 1180px) {
   .hero-grid,
-  .two-col,
+  .about-grid,
   .contact-box,
   .recommendation-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    gap: 34px;
+  }
+
+  .about-title {
+    flex: unset;
+    font-size: clamp(2.8rem, 6vw, 4.6rem);
+  }
+
+  .about-left .section-label,
+  .about-title,
+  .about-right {
+    text-align: center;
   }
 
   .service-grid,
@@ -830,7 +972,7 @@ svg {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .logo-grid-15 {
+  .clients-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -882,6 +1024,10 @@ svg {
     white-space: nowrap;
     flex: 0 0 auto;
   }
+
+  .services-main-title {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 760px) {
@@ -889,7 +1035,9 @@ svg {
     width: min(100% - 28px, var(--container));
   }
 
-  .section {
+  .section,
+  .about-section,
+  .clients-section {
     padding: 60px 0;
   }
 
@@ -942,11 +1090,30 @@ svg {
     width: 100%;
   }
 
+  .about-grid {
+    gap: 24px;
+  }
+
+  .about-title {
+    font-size: clamp(2.3rem, 8vw, 3.4rem);
+    line-height: 1.12;
+  }
+
+  .about-right p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+  }
+
+  .services-main-title {
+    font-size: 2rem;
+    white-space: normal;
+  }
+
   .service-grid,
   .service-grid-three,
   .design-grid,
   .facilitation-grid,
-  .logo-grid-15 {
+  .clients-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1000,7 +1167,8 @@ svg {
   }
 
   .section-heading h2,
-  .contact-box h2 {
+  .contact-box h2,
+  .clients-title {
     font-size: 2rem;
   }
 
@@ -1008,12 +1176,29 @@ svg {
     flex-direction: column;
   }
 
-  .logo-card {
-    min-height: 120px;
+  .client-card {
+    min-height: 150px;
+    border-radius: 22px;
+    padding: 14px;
+  }
+
+  .client-logo-stage {
+    min-height: 118px;
+    border-radius: 18px;
+    padding: 14px;
   }
 
   .client-logo {
-    max-height: 82px;
+    max-width: 90%;
+    max-height: 76px;
+  }
+
+  .client-logo.logo-lg {
+    max-height: 90px;
+  }
+
+  .client-logo.logo-wide {
+    max-height: 72px;
   }
 
   .footer-wrap {
