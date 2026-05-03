@@ -693,3 +693,12 @@
   </script>
 </body>
 </html>
+<script>
+document.querySelectorAll(".flip-card").forEach((card) => {
+  card.addEventListener("click", function () {
+    if (window.innerWidth <= 760) {
+      this.classList.toggle("is-flipped");
+    }
+  });
+});
+</script>
