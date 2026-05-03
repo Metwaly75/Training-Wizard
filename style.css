@@ -1263,3 +1263,88 @@ svg {
     min-width: 38px;
   }
 }
+/* =========================================
+   MOBILE HERO ORDER + FLIP TEXT FIX
+========================================= */
+@media (max-width: 760px) {
+
+  /* Make the wizard video/card appear first on mobile */
+  .hero-visual {
+    order: -1;
+    padding-top: 58px;
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    order: 1;
+  }
+
+  .hero-stats {
+    order: 2;
+  }
+
+  /* Mobile flip behavior fix */
+  .flip-card {
+    height: 380px;
+    min-height: 380px;
+    perspective: 1200px;
+    -webkit-perspective: 1200px;
+  }
+
+  .flip-card-inner,
+  .design-grid .wide-card .flip-card-inner,
+  .design-grid .flip-card:not(.wide-card) .flip-card-inner {
+    height: 380px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+  }
+
+  /* Disable hover flip on mobile */
+  .flip-card:hover .flip-card-inner {
+    transform: none;
+  }
+
+  /* Flip only when tapped */
+  .flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+  }
+
+  .flip-card-front {
+    transform: rotateY(0deg);
+    z-index: 2;
+    opacity: 1;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+    opacity: 0;
+  }
+
+  /* When flipped, hide the front completely so it does not appear mirrored */
+  .flip-card.is-flipped .flip-card-front {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .flip-card.is-flipped .flip-card-back {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+  }
+
+  .flip-card-back * {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}
