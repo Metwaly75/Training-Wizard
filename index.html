@@ -684,21 +684,16 @@
     revealItems.forEach((item) => revealObserver.observe(item));
 
     document.querySelectorAll(".flip-card").forEach((card) => {
-      card.addEventListener("click", function () {
-        if (window.innerWidth <= 760) {
-          this.classList.toggle("is-flipped");
-        }
-      });
-    });
-  </script>
-</body>
-</html>
-<script>
-document.querySelectorAll(".flip-card").forEach((card) => {
   card.addEventListener("click", function () {
     if (window.innerWidth <= 760) {
-      this.classList.toggle("is-flipped");
+      card.classList.toggle("is-flipped");
     }
   });
+
+  card.addEventListener("touchend", function (event) {
+    if (window.innerWidth <= 760) {
+      event.preventDefault();
+      card.classList.toggle("is-flipped");
+    }
+  }, { passive: false });
 });
-</script>
