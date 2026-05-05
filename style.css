@@ -1175,7 +1175,124 @@ svg {
   .recommendation-head {
     flex-direction: column;
   }
+/* =========================================
+   MOBILE CARD FLIP FIX + MOBILE LOGO GRID
+========================================= */
+@media (max-width: 760px) {
 
+  /* Hero video/card appears first on mobile */
+  .hero-visual {
+    order: -1;
+    padding-top: 58px;
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    order: 1;
+  }
+
+  .hero-stats {
+    order: 2;
+  }
+
+  /* Fix mobile flip cards */
+  .flip-card {
+    height: 390px !important;
+    min-height: 390px !important;
+    perspective: 1200px;
+    -webkit-perspective: 1200px;
+  }
+
+  .flip-card-inner,
+  .design-grid .wide-card .flip-card-inner,
+  .design-grid .flip-card:not(.wide-card) .flip-card-inner {
+    height: 390px !important;
+    min-height: 390px !important;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+  }
+
+  /* Disable hover behavior on mobile */
+  .flip-card:hover .flip-card-inner {
+    transform: none !important;
+  }
+
+  /* Flip only by tap/click */
+  .flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg) !important;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+  }
+
+  .flip-card-front {
+    transform: rotateY(0deg);
+    z-index: 2;
+  }
+
+  .flip-card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
+
+  /* Prevent mirrored front text from appearing behind the back */
+  .flip-card.is-flipped .flip-card-front .flip-front-content {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .flip-card.is-flipped .flip-card-back {
+    z-index: 3;
+  }
+
+  .flip-card-back * {
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+  }
+
+  /* Show client logos as a collection, not one by one */
+  .clients-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  .client-card {
+    min-height: 130px !important;
+    padding: 10px !important;
+    border-radius: 20px !important;
+  }
+
+  .client-logo-stage {
+    min-height: 105px !important;
+    padding: 10px !important;
+    border-radius: 16px !important;
+  }
+
+  .client-logo {
+    max-width: 94% !important;
+    max-height: 72px !important;
+  }
+
+  .client-logo.logo-lg {
+    max-height: 82px !important;
+  }
+
+  .client-logo.logo-wide {
+    max-width: 96% !important;
+    max-height: 68px !important;
+  }
+}
   .client-card {
     min-height: 150px;
     border-radius: 22px;
