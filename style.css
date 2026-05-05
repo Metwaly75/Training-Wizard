@@ -39,12 +39,6 @@ a {
   text-decoration: none;
 }
 
-svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
-
 .container {
   width: min(var(--container), calc(100% - 40px));
   margin: 0 auto;
@@ -63,15 +57,23 @@ svg {
   box-shadow: 0 0 18px rgba(245, 199, 93, 0.6);
 }
 
+/* Safe reveal animation — it will not hide the website */
 .reveal {
-  opacity: 0;
-  transform: translateY(44px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 1;
+  transform: none;
+  animation: softReveal 0.75s ease both;
 }
 
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes softReveal {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* HEADER */
@@ -241,13 +243,7 @@ svg {
   box-shadow: var(--shadow);
 }
 
-.wizard-card {
-  width: 100%;
-  max-height: 680px;
-  border-radius: 20px;
-  object-fit: contain;
-}
-
+.wizard-card,
 .wizard-card-video {
   width: 100%;
   height: auto;
@@ -479,7 +475,7 @@ svg {
   padding: 0 22px 22px;
 }
 
-/* SERVICES CARDS */
+/* SERVICE CARDS */
 
 .service-grid {
   display: grid;
@@ -677,7 +673,7 @@ svg {
   color: var(--gold);
 }
 
-/* CLIENTS / LOGOS SECTION */
+/* CLIENTS */
 
 .clients-section {
   padding: 110px 0;
@@ -1062,6 +1058,16 @@ svg {
     gap: 24px;
   }
 
+  .hero-visual {
+    order: -1;
+    padding-top: 58px;
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    order: 1;
+  }
+
   .hero-text h1 {
     font-size: 2.7rem;
   }
@@ -1112,9 +1118,13 @@ svg {
   .service-grid,
   .service-grid-three,
   .design-grid,
-  .facilitation-grid,
-  .clients-grid {
+  .facilitation-grid {
     grid-template-columns: 1fr;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
   }
 
   .design-grid .wide-card {
@@ -1122,15 +1132,21 @@ svg {
   }
 
   .flip-card {
-    height: 360px;
-    min-height: 360px;
+    height: 390px;
+    min-height: 390px;
     perspective: 1200px;
+    -webkit-perspective: 1200px;
   }
 
   .flip-card-inner,
   .design-grid .wide-card .flip-card-inner,
   .design-grid .flip-card:not(.wide-card) .flip-card-inner {
-    height: 360px;
+    height: 390px;
+    min-height: 390px;
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.7s ease;
   }
 
   .flip-card:hover .flip-card-inner {
@@ -1139,6 +1155,23 @@ svg {
 
   .flip-card.is-flipped .flip-card-inner {
     transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .flip-card.is-flipped .flip-card-front .flip-front-content {
+    opacity: 0;
+    visibility: hidden;
   }
 
   .flip-card-back {
@@ -1156,10 +1189,6 @@ svg {
     top: 8px;
   }
 
-  .hero-visual {
-    padding-top: 58px;
-  }
-
   .service-group summary,
   .portfolio-group summary {
     font-size: 1.05rem;
@@ -1175,147 +1204,31 @@ svg {
   .recommendation-head {
     flex-direction: column;
   }
-/* =========================================
-   MOBILE CARD FLIP FIX + MOBILE LOGO GRID
-========================================= */
-@media (max-width: 760px) {
-
-  /* Hero video/card appears first on mobile */
-  .hero-visual {
-    order: -1;
-    padding-top: 58px;
-    margin-bottom: 20px;
-  }
-
-  .hero-text {
-    order: 1;
-  }
-
-  .hero-stats {
-    order: 2;
-  }
-
-  /* Fix mobile flip cards */
-  .flip-card {
-    height: 390px !important;
-    min-height: 390px !important;
-    perspective: 1200px;
-    -webkit-perspective: 1200px;
-  }
-
-  .flip-card-inner,
-  .design-grid .wide-card .flip-card-inner,
-  .design-grid .flip-card:not(.wide-card) .flip-card-inner {
-    height: 390px !important;
-    min-height: 390px !important;
-    position: relative;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    transition: transform 0.7s ease;
-  }
-
-  /* Disable hover behavior on mobile */
-  .flip-card:hover .flip-card-inner {
-    transform: none !important;
-  }
-
-  /* Flip only by tap/click */
-  .flip-card.is-flipped .flip-card-inner {
-    transform: rotateY(180deg) !important;
-  }
-
-  .flip-card-front,
-  .flip-card-back {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100%;
-    height: 100%;
-    border-radius: 24px;
-    overflow: hidden;
-    backface-visibility: hidden !important;
-    -webkit-backface-visibility: hidden !important;
-  }
-
-  .flip-card-front {
-    transform: rotateY(0deg);
-    z-index: 2;
-  }
-
-  .flip-card-back {
-    transform: rotateY(180deg);
-    z-index: 1;
-  }
-
-  /* Prevent mirrored front text from appearing behind the back */
-  .flip-card.is-flipped .flip-card-front .flip-front-content {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .flip-card.is-flipped .flip-card-back {
-    z-index: 3;
-  }
-
-  .flip-card-back * {
-    backface-visibility: hidden !important;
-    -webkit-backface-visibility: hidden !important;
-  }
-
-  /* Show client logos as a collection, not one by one */
-  .clients-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 14px !important;
-  }
 
   .client-card {
-    min-height: 130px !important;
-    padding: 10px !important;
-    border-radius: 20px !important;
+    min-height: 130px;
+    padding: 10px;
+    border-radius: 20px;
   }
 
   .client-logo-stage {
-    min-height: 105px !important;
-    padding: 10px !important;
-    border-radius: 16px !important;
+    min-height: 105px;
+    padding: 10px;
+    border-radius: 16px;
   }
 
   .client-logo {
-    max-width: 94% !important;
-    max-height: 72px !important;
-  }
-
-  .client-logo.logo-lg {
-    max-height: 82px !important;
-  }
-
-  .client-logo.logo-wide {
-    max-width: 96% !important;
-    max-height: 68px !important;
-  }
-}
-  .client-card {
-    min-height: 150px;
-    border-radius: 22px;
-    padding: 14px;
-  }
-
-  .client-logo-stage {
-    min-height: 118px;
-    border-radius: 18px;
-    padding: 14px;
-  }
-
-  .client-logo {
-    max-width: 90%;
-    max-height: 76px;
-  }
-
-  .client-logo.logo-lg {
-    max-height: 90px;
-  }
-
-  .client-logo.logo-wide {
+    max-width: 94%;
     max-height: 72px;
+  }
+
+  .client-logo.logo-lg {
+    max-height: 82px;
+  }
+
+  .client-logo.logo-wide {
+    max-width: 96%;
+    max-height: 68px;
   }
 
   .footer-wrap {
@@ -1378,90 +1291,5 @@ svg {
     width: 38px;
     height: 38px;
     min-width: 38px;
-  }
-}
-/* =========================================
-   MOBILE HERO ORDER + FLIP TEXT FIX
-========================================= */
-@media (max-width: 760px) {
-
-  /* Make the wizard video/card appear first on mobile */
-  .hero-visual {
-    order: -1;
-    padding-top: 58px;
-    margin-bottom: 20px;
-  }
-
-  .hero-text {
-    order: 1;
-  }
-
-  .hero-stats {
-    order: 2;
-  }
-
-  /* Mobile flip behavior fix */
-  .flip-card {
-    height: 380px;
-    min-height: 380px;
-    perspective: 1200px;
-    -webkit-perspective: 1200px;
-  }
-
-  .flip-card-inner,
-  .design-grid .wide-card .flip-card-inner,
-  .design-grid .flip-card:not(.wide-card) .flip-card-inner {
-    height: 380px;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-  }
-
-  /* Disable hover flip on mobile */
-  .flip-card:hover .flip-card-inner {
-    transform: none;
-  }
-
-  /* Flip only when tapped */
-  .flip-card.is-flipped .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-
-  .flip-card-front,
-  .flip-card-back {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-  }
-
-  .flip-card-front {
-    transform: rotateY(0deg);
-    z-index: 2;
-    opacity: 1;
-  }
-
-  .flip-card-back {
-    transform: rotateY(180deg);
-    z-index: 1;
-    opacity: 0;
-  }
-
-  /* When flipped, hide the front completely so it does not appear mirrored */
-  .flip-card.is-flipped .flip-card-front {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .flip-card.is-flipped .flip-card-back {
-    opacity: 1;
-    visibility: visible;
-    z-index: 2;
-  }
-
-  .flip-card-back * {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
   }
 }
